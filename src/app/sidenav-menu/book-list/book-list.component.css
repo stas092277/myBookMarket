@@ -9,6 +9,8 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  box-shadow: 0 0 10px 5px;
+  min-width: 150px;
 }
 
 .mat-grid-tile .mat-figure{
@@ -22,4 +24,8 @@ p {
   font-size: 30px;
   line-height: 40px;
   font-family: 'Orienta', sans-serif;
+}
+
+img{
+  border: 3px outset #f44336;
 }

@@ -1,5 +1,5 @@
 <header>
-  <mat-toolbar>
+  <mat-toolbar class="header">
       <mat-button-toggle  value="left" aria-label="Text align left" (click)="drawer.toggle()">
           <mat-icon >format_align_left</mat-icon>
       </mat-button-toggle>
@@ -7,7 +7,7 @@
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
 
-    <span>Гайд по Книгам</span>
+    <span class="heading">Гайд по Книгам</span>
 
 
   </mat-toolbar>
@@ -15,9 +15,9 @@
 
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p class="heading">Панель управления</p>
+    <p >Панель управления</p>
 
-    <button (click)="showFiller = !showFiller" mat-button color="primary">Список жанров</button>
+    <button (click)="showFiller = !showFiller" mat-button color="warn">Жанры</button>
 
     <app-category-book-list *ngIf="showFiller" [categoryList]="typesOfBook" (outToParent)='receiveFromChild($event)'></app-category-book-list>
 

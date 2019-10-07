@@ -18,10 +18,18 @@
 }
 
 .heading{
-
+  color: #cccccc;
 }
 
 
 .example-fill-remaining-space {
   flex: 1 1 auto;
+}
+
+.header{
+  background-color: #000000;
+}
+
+.mat-button-toggle-label-content{
+  background-color: #cccccc;
 }
