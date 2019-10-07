@@ -7,7 +7,7 @@ export class CategoryServiceService {
 
   constructor() { }
 
-  private categoryList:Topic[] = [
+  private categoryList: Topic[] = [
   {
     name: 'Классика',
     books: [
@@ -32,15 +32,15 @@ export class CategoryServiceService {
     name: 'Бизнес',
     books: [
       {
-        name: 'Одиссея',
-        author: 'Гомер',
-        pictureUrl: ""
+        name: 'Хватит мечтать, займись делом!',
+        author: 'Кэл Ньюпорт',
+        pictureUrl: 'https://www.alpinabook.ru/upload/resize_cache/iblock/d6c/380_567_1/d6c6daf4ab8e561be7ed09a074962095.jpg'
       }
       ,
       {
-        name: 'Одиссея',
-        author: 'Гомер',
-        pictureUrl: ""
+        name: 'Чёрный лебедь',
+        author: 'Нассим Талеб',
+        pictureUrl: 'https://cdn1.ozone.ru/multimedia/1011915048.jpg'
       }
     ]
   },
@@ -48,19 +48,19 @@ export class CategoryServiceService {
     name: 'Детские книги',
     books: [
       {
-      name: 'Одиссея',
-      author: 'Гомер',
-      pictureUrl: ""
+      name: 'Гарри Поттер',
+      author: 'Джоан Роулинг',
+      pictureUrl: 'http://russian7.ru/wp-content/uploads/2015/11/HarryPotter_4.jpg'
       },
       {
-        name: 'Одиссея',
-        author: 'Гомер',
-        pictureUrl: ""
+        name: 'Малыш и Карлсон',
+        author: 'Астрид Линдгрен',
+        pictureUrl: 'http://russian7.ru/wp-content/uploads/2015/11/bigi4d99ae61bac1e.jpg'
       },
       {
-        name: 'Одиссея',
-        author: 'Гомер',
-        pictureUrl: ""
+        name: 'Книга джунглей',
+        author: 'Редьярд Киплинг',
+        pictureUrl: 'http://russian7.ru/wp-content/uploads/2015/11/Jungle_Book_Rudyard_Kipling_poster.jpg'
       }
     ]
   },
@@ -68,19 +68,19 @@ export class CategoryServiceService {
     name: 'Проза',
     books: [
       {
-        name: 'Одиссея',
-        author: 'Гомер',
-        pictureUrl: ""
+        name: '11/22/63',
+        author: 'Стивен Кинг',
+        pictureUrl: 'https://i2.mybook.io/p/256x426/book_covers/1a/c6/1ac686a9-0fa8-4e72-a70a-77e858117761.jpe'
       },
       {
-        name: 'Одиссея',
-        author: 'Гомер',
-        pictureUrl: ""
+        name: 'Марсианин',
+        author: 'Энди Вейер',
+        pictureUrl: 'https://i3.mybook.io/p/256x426/book_covers/50/e6/50e66da6-cf26-488f-9629-264ebac5644d.jpe'
       },
       {
-        name: 'Одиссея',
-        author: 'Гомер',
-        pictureUrl: ""
+        name: 'Американские боги',
+        author: 'Нил Гейман',
+        pictureUrl: 'https://i3.mybook.io/p/256x426/book_covers/1b/87/1b8722a9-d305-4a18-8e0c-796c931c7b64.jpe'
       }
     ]
   },
@@ -88,9 +88,9 @@ export class CategoryServiceService {
     name: 'Фатнастика',
     books: [
       {
-        name: 'Одиссея',
-        author: 'Гомер',
-        pictureUrl: ''
+        name: 'Властелин колец',
+        author: 'Джон Толкин',
+        pictureUrl: 'https://img-gorod.ru/24/233/2423346_detail.jpg'
       }
     ]
   }
@@ -102,13 +102,3 @@ export class CategoryServiceService {
 
 }
 
-class Topic {
-  name: string;
-  books: Book[];
-}
-
-class Book {
-  name: string;
-  author: string;
-  pictureUrl: string;
-}

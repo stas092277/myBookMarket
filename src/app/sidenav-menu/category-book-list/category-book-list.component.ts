@@ -8,7 +8,7 @@ import { CategoryServiceService } from './categoryService.service';
 })
 export class CategoryBookListComponent{
 
-  selectedTopic;
+  selectedTopic: Topic;
   typesOfBook;
 
   constructor(

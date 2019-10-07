@@ -6,4 +6,4 @@
   </mat-list-option>
 </mat-selection-list>
 
-<app-book-list [booksData]="selectedTopic.books"></app-book-list>
+<app-book-list *ngIf="selectedTopic.books" [booksData]="selectedTopic?.books"></app-book-list>
