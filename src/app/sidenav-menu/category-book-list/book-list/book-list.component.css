@@ -11,6 +11,7 @@
   padding: 10px;
   box-shadow: 0 0 10px 5px;
   min-width: 150px;
+  min-height: 300px;
 }
 
 .mat-grid-tile .mat-figure{
@@ -28,4 +29,9 @@ p {
 
 img{
   border: 3px outset #f44336;
+}
+
+.container{
+  width: auto;
+  height: auto;
 }

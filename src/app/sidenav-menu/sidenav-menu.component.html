@@ -19,12 +19,10 @@
 
     <button (click)="showFiller = !showFiller" mat-button color="warn">Жанры</button>
 
-    <app-category-book-list *ngIf="showFiller" [categoryList]="typesOfBook" (outToParent)='receiveFromChild($event)'></app-category-book-list>
-
   </mat-drawer>
 
   <div class="example-sidenav-content">
-      <app-book-list  [booksData]="selectBookList"></app-book-list>
+      <app-category-book-list *ngIf="showFiller"></app-category-book-list>
   </div>
 
 </mat-drawer-container>
