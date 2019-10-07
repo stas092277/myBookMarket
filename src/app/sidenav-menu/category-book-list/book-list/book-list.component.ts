@@ -9,9 +9,12 @@ export class BookListComponent implements OnInit {
 
   @Input() booksData;
 
+
+
   constructor() { }
 
   ngOnInit() {
   }
 
 }
+

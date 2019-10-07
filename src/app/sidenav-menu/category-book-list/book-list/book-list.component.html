@@ -1,0 +1,10 @@
+<p class="heading">Список книг:</p>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let book of booksData">
+    <div>
+      <p>{{book.name}}</p>
+      <p>{{book.author}}</p>
+      <img src={{book.pictureUrl}}>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
