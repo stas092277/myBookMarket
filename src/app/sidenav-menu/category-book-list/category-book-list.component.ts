@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CategoryServiceService } from './categoryService.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { CategoryServiceService } from '../categoryService.service';
+
 
 @Component({
   selector: 'app-category-book-list',
@@ -8,20 +9,19 @@ import { CategoryServiceService } from './categoryService.service';
 })
 export class CategoryBookListComponent{
 
+  @Input() categoryList: Topic[];
+  @Output() outToParent = new EventEmitter();
+
   selectedTopic: Topic;
-  typesOfBook;
 
   constructor(
     private _categoryService: CategoryServiceService
     ) {
   }
 
-  ngOnInit() {
-    this.typesOfBook = this._categoryService.getAll();
-  }
-
-  onSelect(topic): void {
-    this.selectedTopic = topic;
+  onSelect(topic: Topic): void {
+    topic.select = !topic.select;
+    this.outToParent.emit(this._categoryService.getAllSelectBook());
   }
 
 }

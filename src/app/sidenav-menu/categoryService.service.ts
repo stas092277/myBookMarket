@@ -26,7 +26,8 @@ export class CategoryServiceService {
         author: 'Лев Николаевич Толстой ',
         pictureUrl: "https://s5-goods.ozstatic.by/1000/338/812/10/10812338_0.jpg"
       }
-    ]
+    ],
+    select: false
   },
   {
     name: 'Бизнес',
@@ -42,7 +43,8 @@ export class CategoryServiceService {
         author: 'Нассим Талеб',
         pictureUrl: 'https://cdn1.ozone.ru/multimedia/1011915048.jpg'
       }
-    ]
+    ],
+    select: false
   },
   {
     name: 'Детские книги',
@@ -62,7 +64,8 @@ export class CategoryServiceService {
         author: 'Редьярд Киплинг',
         pictureUrl: 'http://russian7.ru/wp-content/uploads/2015/11/Jungle_Book_Rudyard_Kipling_poster.jpg'
       }
-    ]
+    ],
+    select: false
   },
   {
     name: 'Проза',
@@ -82,7 +85,8 @@ export class CategoryServiceService {
         author: 'Нил Гейман',
         pictureUrl: 'https://i3.mybook.io/p/256x426/book_covers/1b/87/1b8722a9-d305-4a18-8e0c-796c931c7b64.jpe'
       }
-    ]
+    ],
+    select: false
   },
   {
     name: 'Фатнастика',
@@ -92,12 +96,26 @@ export class CategoryServiceService {
         author: 'Джон Толкин',
         pictureUrl: 'https://img-gorod.ru/24/233/2423346_detail.jpg'
       }
-    ]
+    ],
+    select: false
   }
   ];
 
   getAll() {
     return this.categoryList;
+  }
+
+  getAllSelectBook() {
+    var bookList: Book[]= [];
+    this.categoryList.forEach(element => {
+      if (element.select)
+      {
+        element.books.forEach(element => {
+          bookList.push(element);
+        } )
+      }
+    });
+    return bookList;
   }
 
 }

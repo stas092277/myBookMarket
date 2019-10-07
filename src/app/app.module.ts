@@ -5,12 +5,15 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavMenuComponent } from './sidenav-menu/sidenav-menu.component';
-import { BookListComponent } from './sidenav-menu/category-book-list/book-list/book-list.component';
+import { BookListComponent } from './sidenav-menu/book-list/book-list.component';
 import { CategoryBookListComponent } from './sidenav-menu/category-book-list/category-book-list.component';
 
 @NgModule({
@@ -28,7 +31,10 @@ import { CategoryBookListComponent } from './sidenav-menu/category-book-list/cat
     MatListModule,
     MatButtonModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonToggleModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

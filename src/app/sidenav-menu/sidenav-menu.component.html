@@ -1,16 +1,30 @@
+<header>
+  <mat-toolbar>
+      <mat-button-toggle  value="left" aria-label="Text align left" (click)="drawer.toggle()">
+          <mat-icon >format_align_left</mat-icon>
+      </mat-button-toggle>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <span>Гайд по Книгам</span>
+
+
+  </mat-toolbar>
+</header>
+
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <p class="heading">Панель управления</p>
 
-    <button (click)="showFiller = !showFiller" mat-button color="primary">Книги</button>
+    <button (click)="showFiller = !showFiller" mat-button color="primary">Список жанров</button>
+
+    <app-category-book-list *ngIf="showFiller" [categoryList]="typesOfBook" (outToParent)='receiveFromChild($event)'></app-category-book-list>
+
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <button type="button"  mat-stroked-button color="primary" (click)="drawer.toggle()">
-      меню
-    </button>
-
-    <app-category-book-list *ngIf="showFiller"></app-category-book-list>
+      <app-book-list  [booksData]="selectBookList"></app-book-list>
   </div>
 
 </mat-drawer-container>

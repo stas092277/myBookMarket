@@ -1,9 +1,7 @@
-<p>Список жанров:</p>
-
 <mat-selection-list class="categoryBook">
-  <mat-list-option *ngFor="let oneType of typesOfBook" (click)="onSelect(oneType)">
+  <mat-list-option *ngFor="let oneType of categoryList" (click)="onSelect(oneType)">
     {{oneType.name}}
   </mat-list-option>
 </mat-selection-list>
 
-<app-book-list *ngIf="selectedTopic.books" [booksData]="selectedTopic?.books"></app-book-list>
+
