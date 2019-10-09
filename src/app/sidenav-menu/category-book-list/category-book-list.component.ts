@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CategoryServiceService } from './categoryService.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { BookListComponent } from './book-list/book-list.component';
+import { Book, Topic } from './topicBookClass';
 
 
 
@@ -24,8 +25,6 @@ export class CategoryBookListComponent{
     public dialog: MatDialog
     ) {
   }
-
-
 
   ngOnInit() {
     this.typesOfBook = this._categoryService.getAll();

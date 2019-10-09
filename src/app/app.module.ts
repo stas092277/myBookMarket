@@ -8,7 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA, MatDialog, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,8 +40,11 @@ import { CategoryBookListComponent } from './sidenav-menu/category-book-list/cat
     MatIconModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {}}
+  ],
   bootstrap: [AppComponent],
-  entryComponents: [BookListComponent]
+  entryComponents: [BookListComponent],
+
 })
 export class AppModule { }

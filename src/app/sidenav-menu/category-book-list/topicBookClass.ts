@@ -1,9 +1,9 @@
-class Topic {
+export class Topic {
   name: string;
   books: Book[];
 }
 
-class Book {
+export class Book {
   name: string;
   author: string;
   pictureUrl: string;

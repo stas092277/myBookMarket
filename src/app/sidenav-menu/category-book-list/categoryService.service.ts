@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Topic } from './topicBookClass';
 
 @Injectable({
   providedIn: 'root'

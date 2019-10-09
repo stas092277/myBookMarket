@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SidenavMenuComponent } from './sidenav-menu.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('SidenavMenuComponent', () => {
   let component: SidenavMenuComponent;
@@ -8,7 +9,8 @@ describe('SidenavMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidenavMenuComponent ]
+      declarations: [ SidenavMenuComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));
