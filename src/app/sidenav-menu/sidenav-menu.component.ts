@@ -7,7 +7,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   templateUrl: './sidenav-menu.component.html',
   styleUrls: ['./sidenav-menu.component.css']
 })
-export class SidenavMenuComponent{
+
+export class SidenavMenuComponent {
   showFiller = false;
 
 }

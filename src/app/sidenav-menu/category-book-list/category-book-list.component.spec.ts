@@ -2,32 +2,41 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CategoryBookListComponent } from './category-book-list.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { CategoryServiceService } from './categoryService.service';
 
 describe('CategoryBookListComponent', () => {
-  let component: CategoryBookListComponent;
-  let fixture: ComponentFixture<CategoryBookListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CategoryBookListComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [
-        MatDialog,
-        CategoryServiceService
-    ]
+      imports: [
+        MatDialogModule
+      ],
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CategoryBookListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  describe(':', () => {
 
-  it('should create', () => {
+    function setup() {
+      const fixture = TestBed.createComponent(CategoryBookListComponent);
+      const component = fixture.componentInstance;
+      const _categoryService = fixture.debugElement.injector.get(CategoryServiceService);
+
+      return { fixture, component, _categoryService };
+    }
+
+    it('should create', () => {
+    const { component } = setup();
     expect(component).toBeTruthy();
+    });
+
+    it('should call CategoryService', () => {
+    const { _categoryService, component } = setup();
+    component.ngOnInit();
+    expect(spyOn(_categoryService, 'getAll').calls.any()).toBeTruthy();
+    });
   });
 });
