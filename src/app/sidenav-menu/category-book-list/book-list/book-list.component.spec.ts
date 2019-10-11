@@ -32,4 +32,8 @@ describe('BookListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should get not null data', () => {
+    expect(component.data).toBeTruthy();
+  });
 });

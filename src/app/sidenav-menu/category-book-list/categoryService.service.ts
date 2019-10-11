@@ -100,7 +100,7 @@ export class CategoryServiceService {
   }
   ];
 
-  getAll() {
+  getAll(): Topic[] {
     return this.categoryList;
   }
 

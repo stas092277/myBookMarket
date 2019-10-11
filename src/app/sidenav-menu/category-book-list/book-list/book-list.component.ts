@@ -14,9 +14,6 @@ export class BookListComponent{
     public dialogRef: MatDialogRef<BookListComponent>,
   ){ }
 
-  onConfirmClick(): void {
-    this.dialogRef.close(true);
-  }
 
 }
 
