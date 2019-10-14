@@ -54,12 +54,13 @@ describe('CategoryBookListComponent', () => {
     }));
 
     it('should call dialog ', async(() => {
-      // const { component, fixture, dailog } = setup();
-      // const dailogSpy =  spyOn( dailog, 'open').and.callThrough();
-      // expect( dailogSpy ).not.toHaveBeenCalled();
-      // const el  = fixture.debugElement.query(By.css('div')).nativeElement;
-      // el.click();
-      // expect(dailogSpy).toHaveBeenCalledTimes(1);
+      const { component, fixture, dailog } = setup();
+      fixture.detectChanges();
+      const dailogSpy =  spyOn( dailog, 'open').and.callThrough();
+      expect( dailogSpy ).not.toHaveBeenCalled();
+      const el  = fixture.debugElement.query(By.css('div')).nativeElement;
+      el.click();
+      expect( dailogSpy ).toHaveBeenCalledTimes(1);
     }));
 
 

@@ -5,8 +5,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 describe('SidenavMenuComponent', () => {
-  let component: SidenavMenuComponent;
-  let fixture: ComponentFixture<SidenavMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -41,9 +39,12 @@ describe('SidenavMenuComponent', () => {
 
     it('should open sidenav', async(() => {
       // const { component, fixture } = setup();
-      // fixture.detectChanges();
+
+      // const el  = fixture.debugElement.query(By.css('mat-drawer-open'));
       // const openButton  = fixture.debugElement.query(By.css('mat-button-toggle')).nativeElement;
       // openButton.click();
+      // const el  = fixture.debugElement.query(By.css('mat-drawer-open'));
+      // expect(el.nativeElement).toBeTruthy();
     }));
 
   });
