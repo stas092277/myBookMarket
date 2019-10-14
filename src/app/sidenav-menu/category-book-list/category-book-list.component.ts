@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CategoryServiceService } from './categoryService.service';
+import { CategoryServiceService } from '../categoryService.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { BookListComponent } from './book-list/book-list.component';
-import { Book, Topic } from './topicBookClass';
+import { Book, Topic } from '../topicBookClass';
 
 
 
@@ -17,20 +17,16 @@ export class CategoryBookListComponent {
 
   selectedTopic: Topic;
 
-  typesOfBook: Topic[];
-  selectBookList: Book[];
-
+  @Input() typesOfGoods: Topic[];
 
   constructor(
     // tslint:disable-next-line: variable-name
-    public _categoryService: CategoryServiceService,
     public dialog: MatDialog
     ) {
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
-    this.typesOfBook = this._categoryService.getAll();
   }
 
   onSelect(topic: Topic): void {

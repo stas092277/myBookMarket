@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SidenavMenuComponent } from './sidenav-menu.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { CategoryServiceService } from './categoryService.service';
 
 describe('SidenavMenuComponent', () => {
 
@@ -20,7 +21,8 @@ describe('SidenavMenuComponent', () => {
     function setup() {
       const fixture = TestBed.createComponent(SidenavMenuComponent);
       const component = fixture.debugElement.componentInstance;
-      return { fixture, component };
+      const _categoryService = fixture.debugElement.injector.get(CategoryServiceService);
+      return { fixture, component, _categoryService };
     }
 
     it('should create', async(() => {
@@ -36,6 +38,16 @@ describe('SidenavMenuComponent', () => {
       el.click();
       expect(component.showFiller).toBeTruthy();
     }));
+
+    it('should call CategoryService', async(() => {
+      const { _categoryService, fixture } = setup();
+      const categoryServiceSpy =  spyOn(_categoryService, 'getAll').and.callThrough();
+      expect( categoryServiceSpy ).not.toHaveBeenCalled();
+      const el  = fixture.debugElement.query(By.css('button')).nativeElement;
+      el.click();
+      expect(categoryServiceSpy).toHaveBeenCalledTimes(1);
+    }));
+
 
     it('should open sidenav', async(() => {
       // const { component, fixture } = setup();
