@@ -22,6 +22,7 @@ describe('SidenavMenuComponent', () => {
       const fixture = TestBed.createComponent(SidenavMenuComponent);
       const component = fixture.debugElement.componentInstance;
       const _categoryService = fixture.debugElement.injector.get(CategoryServiceService);
+      fixture.detectChanges();
       return { fixture, component, _categoryService };
     }
 
@@ -32,7 +33,7 @@ describe('SidenavMenuComponent', () => {
 
     it('should set showFiller to true', async(() => {
       const { component, fixture } = setup();
-      fixture.detectChanges();
+
       const el  = fixture.debugElement.query(By.css('button')).nativeElement;
       expect(!component.showFillerBook).toBeTruthy();
       el.click();
@@ -49,15 +50,15 @@ describe('SidenavMenuComponent', () => {
     }));
 
 
-    // it('should open sidenav', async(() => {
-    //   const { component, fixture } = setup();
+    it('should open sidenav', async(() => {
+      const { component, fixture } = setup();
 
-    //   const el  = fixture.debugElement.query(By.css('mat-drawer-open'));
-    //   const openButton  = fixture.debugElement.query(By.css('mat-button-toggle')).nativeElement;
-    //   openButton.click();
-    //   const el  = fixture.debugElement.query(By.css('mat-drawer-open'));
-    //   expect(el.nativeElement).toBeTruthy();
-    // }));
+      const openButton  = fixture.debugElement.query(By.css('mat-button-toggle')).nativeElement;
+      openButton.click();
+
+
+      expect(component.sidenav.opened).toBeTruthy();
+    }));
 
   });
 });

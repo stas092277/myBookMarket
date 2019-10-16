@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { CategoryServiceService } from './categoryService.service';
 import { Topic } from './topicInterface';
+import { MatSidenav } from '@angular/material/sidenav';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { Topic } from './topicInterface';
 })
 
 export class SidenavMenuComponent {
+  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
+
   typesOfGoods: Topic[];
   showFillerBook = false;
   showFillerGame = false;
@@ -19,6 +22,7 @@ export class SidenavMenuComponent {
     // tslint:disable-next-line: variable-name
     public _categoryService: CategoryServiceService,
     ) {
+
   }
 
   openBooksCateg() {

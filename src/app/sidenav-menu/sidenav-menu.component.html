@@ -1,6 +1,6 @@
 <header>
   <mat-toolbar class="header">
-      <mat-button-toggle  value="left" aria-label="Text align left" (click)="sidenav.toggle()">
+      <mat-button-toggle  value="left" aria-label="Text align left" class="main-button" (click)="sidenav.toggle()">
           <mat-icon >format_align_left</mat-icon>
       </mat-button-toggle>
 
@@ -29,7 +29,7 @@
 
 </mat-drawer-container> -->
 
-<mat-sidenav-container class="example-container" autosize>
+<mat-sidenav-container class="example-container" >
   <mat-sidenav #sidenav mode="side" >
     <p>Панель управления</p>
 
@@ -39,6 +39,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content autosize>
+    {{sidenav.opened}}
     <app-category-book-list *ngIf="showFillerBook || showFillerGame" [typesOfGoods]=typesOfGoods></app-category-book-list>
   </mat-sidenav-content>
 </mat-sidenav-container>
