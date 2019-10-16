@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CategoryServiceService } from '../categoryService.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog  } from '@angular/material/dialog';
 import { BookListComponent } from './book-list/book-list.component';
-import { Book, Topic } from '../topicBookClass';
+import { Topic } from '../topicInterface';
 
 
 
@@ -33,7 +33,7 @@ export class CategoryBookListComponent {
     const dialogRef = this.dialog.open( BookListComponent, {
       width: '1200px',
       height: '1200px',
-      data: {books: topic.books}
+      data: {books: topic.goods}
     }
     );
   }

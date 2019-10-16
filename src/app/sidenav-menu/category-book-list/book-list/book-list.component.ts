@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { Book } from '../../topicBookClass';
+import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Product } from '../../topicInterface';
 
 @Component({
   selector: 'app-book-list',
@@ -10,7 +10,7 @@ import { Book } from '../../topicBookClass';
 export class BookListComponent{
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: Book[],
+    @Inject(MAT_DIALOG_DATA) public data: Product[],
     public dialogRef: MatDialogRef<BookListComponent>,
   ){ }
 

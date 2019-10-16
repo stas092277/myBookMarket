@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { CategoryServiceService } from './categoryService.service';
-import { Topic } from './topicBookClass';
+import { Topic } from './topicInterface';
 
 
 @Component({
@@ -12,7 +12,8 @@ import { Topic } from './topicBookClass';
 
 export class SidenavMenuComponent {
   typesOfGoods: Topic[];
-  showFiller = false;
+  showFillerBook = false;
+  showFillerGame = false;
 
   constructor(
     // tslint:disable-next-line: variable-name
@@ -20,9 +21,20 @@ export class SidenavMenuComponent {
     ) {
   }
 
-  openBooksCateg(){
-    this.showFiller = !this.showFiller;
-    this.typesOfGoods = this._categoryService.getAll();
+  openBooksCateg() {
+    if ( !this.showFillerBook) {
+      this.showFillerGame = false;
+    }
+    this.showFillerBook = !this.showFillerBook;
+    this.typesOfGoods = this._categoryService.getAllBooks();
+  }
+
+  openGamesCateg() {
+    if ( !this.showFillerGame) {
+      this.showFillerBook = false;
+    }
+    this.showFillerGame = !this.showFillerGame;
+    this.typesOfGoods = this._categoryService.getAllGames();
   }
 }
 

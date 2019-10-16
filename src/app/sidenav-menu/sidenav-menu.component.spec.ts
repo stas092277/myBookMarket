@@ -34,14 +34,14 @@ describe('SidenavMenuComponent', () => {
       const { component, fixture } = setup();
       fixture.detectChanges();
       const el  = fixture.debugElement.query(By.css('button')).nativeElement;
-      expect(!component.showFiller).toBeTruthy();
+      expect(!component.showFillerBook).toBeTruthy();
       el.click();
-      expect(component.showFiller).toBeTruthy();
+      expect(component.showFillerBook).toBeTruthy();
     }));
 
     it('should call CategoryService', async(() => {
       const { _categoryService, fixture } = setup();
-      const categoryServiceSpy =  spyOn(_categoryService, 'getAll').and.callThrough();
+      const categoryServiceSpy =  spyOn(_categoryService, 'getAllBooks').and.callThrough();
       expect( categoryServiceSpy ).not.toHaveBeenCalled();
       const el  = fixture.debugElement.query(By.css('button')).nativeElement;
       el.click();

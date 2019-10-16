@@ -1,9 +1,9 @@
-export class Topic {
+export interface Topic {
   name: string;
-  books: Book[];
+  goods: Product[];
 }
 
-export class Book {
+export interface Product {
   name: string;
   author: string;
   pictureUrl: string;
