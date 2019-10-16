@@ -49,15 +49,15 @@ describe('SidenavMenuComponent', () => {
     }));
 
 
-    it('should open sidenav', async(() => {
-      // const { component, fixture } = setup();
+    // it('should open sidenav', async(() => {
+    //   const { component, fixture } = setup();
 
-      // const el  = fixture.debugElement.query(By.css('mat-drawer-open'));
-      // const openButton  = fixture.debugElement.query(By.css('mat-button-toggle')).nativeElement;
-      // openButton.click();
-      // const el  = fixture.debugElement.query(By.css('mat-drawer-open'));
-      // expect(el.nativeElement).toBeTruthy();
-    }));
+    //   const el  = fixture.debugElement.query(By.css('mat-drawer-open'));
+    //   const openButton  = fixture.debugElement.query(By.css('mat-button-toggle')).nativeElement;
+    //   openButton.click();
+    //   const el  = fixture.debugElement.query(By.css('mat-drawer-open'));
+    //   expect(el.nativeElement).toBeTruthy();
+    // }));
 
   });
 });

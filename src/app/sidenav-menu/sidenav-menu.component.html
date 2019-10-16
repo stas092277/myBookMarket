@@ -1,6 +1,6 @@
 <header>
   <mat-toolbar class="header">
-      <mat-button-toggle  value="left" aria-label="Text align left" (click)="drawer.toggle()">
+      <mat-button-toggle  value="left" aria-label="Text align left" (click)="sidenav.toggle()">
           <mat-icon >format_align_left</mat-icon>
       </mat-button-toggle>
 
@@ -13,7 +13,7 @@
   </mat-toolbar>
 </header>
 
-<mat-drawer-container class="example-container" autosize>
+<!-- <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <p>Панель управления</p>
 
@@ -27,4 +27,18 @@
       <app-category-book-list *ngIf="showFillerBook || showFillerGame" [typesOfGoods]=typesOfGoods></app-category-book-list>
   </div>
 
-</mat-drawer-container>
+</mat-drawer-container> -->
+
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav #sidenav mode="side" >
+    <p>Панель управления</p>
+
+    <button (click)="openBooksCateg()"  mat-button color="warn">Книги</button>
+
+    <button (click)="openGamesCateg()"  mat-button color="warn">Компьютерные игры</button>
+  </mat-sidenav>
+
+  <mat-sidenav-content autosize>
+    <app-category-book-list *ngIf="showFillerBook || showFillerGame" [typesOfGoods]=typesOfGoods></app-category-book-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>
