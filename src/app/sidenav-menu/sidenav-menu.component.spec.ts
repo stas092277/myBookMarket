@@ -55,7 +55,7 @@ describe('SidenavMenuComponent', () => {
 
       const openButton  = fixture.debugElement.query(By.css('mat-button-toggle')).nativeElement;
       openButton.click();
-
+      console.log(component.sidenav)
 
       expect(component.sidenav.opened).toBeTruthy();
     }));
