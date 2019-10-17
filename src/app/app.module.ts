@@ -15,16 +15,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavMenuComponent } from './sidenav-menu/sidenav-menu.component';
-import { BookListComponent } from './sidenav-menu/category-book-list/book-list/book-list.component';
-import { CategoryBookListComponent } from './sidenav-menu/category-book-list/category-book-list.component';
+import { CategoresListComponent } from './sidenav-menu/categores-list/categores-list.component';
+import { DialogListComponent } from './sidenav-menu/categores-list/dialog-list/dialog-list.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavMenuComponent,
-    BookListComponent,
-    CategoryBookListComponent
+    CategoresListComponent,
+    DialogListComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,7 @@ import { CategoryBookListComponent } from './sidenav-menu/category-book-list/cat
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [BookListComponent],
+  entryComponents: [DialogListComponent],
 
 })
 export class AppModule { }

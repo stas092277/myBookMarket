@@ -1,10 +1,10 @@
-export interface Topic {
+export interface Categ {
   name: string;
   goods: Product[];
 }
 
 export interface Product {
   name: string;
-  author: string;
+  author?: string;
   pictureUrl: string;
 }

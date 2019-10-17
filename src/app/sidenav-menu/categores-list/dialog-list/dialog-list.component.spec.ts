@@ -1,17 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BookListComponent } from './book-list.component';
+import { DialogListComponent } from './dialog-list.component';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('BookListComponent', () => {
-  let component: BookListComponent;
-  let fixture: ComponentFixture<BookListComponent>;
+describe('DialogListComponent', () => {
+  let component: DialogListComponent;
+  let fixture: ComponentFixture<DialogListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookListComponent ],
+      declarations: [ DialogListComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [{
         provide: MatDialogRef,
@@ -25,7 +24,7 @@ describe('BookListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BookListComponent);
+    fixture = TestBed.createComponent(DialogListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

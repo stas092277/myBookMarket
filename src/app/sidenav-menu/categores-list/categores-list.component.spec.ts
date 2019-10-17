@@ -1,22 +1,22 @@
-import { async, TestBed } from '@angular/core/testing';
-import { CategoryBookListComponent } from './category-book-list.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { CategoresListComponent } from './categores-list.component';
 import { By } from '@angular/platform-browser';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-
-describe('CategoryBookListComponent', () => {
+describe('CategoresListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CategoryBookListComponent ],
+      declarations: [ CategoresListComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [
         MatDialogModule,
         BrowserAnimationsModule
       ],
-      providers:[CategoryBookListComponent]
+      providers:[CategoresListComponent]
     })
     .compileComponents();
   }));
@@ -24,7 +24,7 @@ describe('CategoryBookListComponent', () => {
   describe(':', () => {
 
     function setup() {
-      const fixture = TestBed.createComponent(CategoryBookListComponent);
+      const fixture = TestBed.createComponent(CategoresListComponent);
       const component = fixture.componentInstance;
       const dailog = fixture.debugElement.injector.get(MatDialog);
       return { fixture, component,  dailog };

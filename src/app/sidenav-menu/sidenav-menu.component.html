@@ -13,21 +13,6 @@
   </mat-toolbar>
 </header>
 
-<!-- <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Панель управления</p>
-
-    <button (click)="openBooksCateg()"  mat-button color="warn">Книги</button>
-
-    <button (click)="openGamesCateg()"  mat-button color="warn">Компьютерные игры</button>
-
-  </mat-drawer>
-
-  <div class="example-sidenav-content">
-      <app-category-book-list *ngIf="showFillerBook || showFillerGame" [typesOfGoods]=typesOfGoods></app-category-book-list>
-  </div>
-
-</mat-drawer-container> -->
 
 <mat-sidenav-container class="example-container" >
   <mat-sidenav #sidenav mode="side" >
@@ -40,6 +25,6 @@
 
   <mat-sidenav-content autosize>
     {{sidenav.opened}}
-    <app-category-book-list *ngIf="showFillerBook || showFillerGame" [typesOfGoods]=typesOfGoods></app-category-book-list>
+    <app-categores-list *ngIf="showFillerBook || showFillerGame" [typesOfGoods]=typesOfGoods></app-categores-list>
   </mat-sidenav-content>
 </mat-sidenav-container>

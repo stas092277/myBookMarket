@@ -1,0 +1,7 @@
+.categores{
+  cursor: pointer;
+}
+
+mat-selection-list:focus{
+  outline: none;
+}
