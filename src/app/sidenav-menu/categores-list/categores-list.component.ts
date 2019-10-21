@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Categ } from 'src/app/Models/categInterface';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogListComponent } from './dialog-list/dialog-list.component';
+import { BaseService } from 'src/app/Abstractions/base.service';
 
 @Component({
   selector: 'app-categores-list',
@@ -13,16 +14,18 @@ export class CategoresListComponent{
 
   selectedTopic: Categ;
 
-  @Input() typesOfGoods: Categ[];
+  typesOfGoods: Categ[];
 
   constructor(
     // tslint:disable-next-line: variable-name
-    protected dialog: MatDialog
+    protected dialog: MatDialog,
+    private _baseSerice: BaseService
     ) {
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
+    this.typesOfGoods = this._baseSerice.get();
   }
 
   onSelect(topic: Categ): void {

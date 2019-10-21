@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookCategListComponent } from './book-categ-list.component';
+import { CategoresListComponent } from '../categores-list/categores-list.component';
+import { BaseService } from 'src/app/Abstractions/base.service';
+import { BookService } from 'src/app/Services/book.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('BookCategListComponent', () => {
   let component: BookCategListComponent;
@@ -8,18 +12,27 @@ describe('BookCategListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookCategListComponent ]
+      declarations: [ BookCategListComponent ],
+      providers: [
+        { provide: BaseService, useClass: BookService }
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BookCategListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  describe(':', () => {
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    function setup() {
+      const fixture = TestBed.createComponent(BookCategListComponent);
+      const component = fixture.debugElement.componentInstance;
+      return { fixture, component };
+    }
+
+    it('should create', () => {
+      const { component } = setup();
+      expect(component).toBeTruthy();
+    });
+
   });
 });

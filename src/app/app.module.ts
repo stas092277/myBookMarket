@@ -47,7 +47,6 @@ import { GameCategListComponent } from './sidenav-menu/game-categ-list/game-cate
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogListComponent],
-
+  entryComponents: [DialogListComponent]
 })
 export class AppModule { }

@@ -14,13 +14,13 @@ import { Categ } from 'src/app/Models/categInterface';
 })
 export class BookCategListComponent {
 
-  typesOfGoods: Categ[];
+  // typesOfGoods: Categ[];
 
-  constructor(
-    private _bookBaseSerice: BaseService ) {}
+  // constructor(
+  //   private _bookBaseSerice: BaseService ) {}
 
-  ngOnInit() {
-    this.typesOfGoods = this._bookBaseSerice.get();
-  }
+  // ngOnInit() {
+  //   this.typesOfGoods = this._bookBaseSerice.get();
+  // }
 
 }

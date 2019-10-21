@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GameCategListComponent } from './game-categ-list.component';
+import { BaseService } from 'src/app/Abstractions/base.service';
+import { GameService } from 'src/app/Services/game.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('GameCategListComponent', () => {
   let component: GameCategListComponent;
@@ -8,18 +11,27 @@ describe('GameCategListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameCategListComponent ]
+      declarations: [ GameCategListComponent ],
+      providers: [
+        { provide: BaseService, useClass: GameService }
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(GameCategListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  describe(':', () => {
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    function setup() {
+      const fixture = TestBed.createComponent(GameCategListComponent);
+      const component = fixture.debugElement.componentInstance;
+      return { fixture, component };
+    }
+
+    it('should create', () => {
+      const { component } = setup();
+      expect(component).toBeTruthy();
+    });
+
   });
 });

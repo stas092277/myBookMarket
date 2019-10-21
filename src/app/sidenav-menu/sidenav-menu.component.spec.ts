@@ -39,29 +39,5 @@ describe('SidenavMenuComponent', () => {
       expect(component.showFillerBook).toBeTruthy();
     }));
 
-    it('should call CategoryService', async(() => {
-      const { _bookService, fixture } = setup();
-      const categoryServiceSpy =  spyOn(_bookService, 'get').and.callThrough();
-      expect( categoryServiceSpy ).not.toHaveBeenCalled();
-      const el  = fixture.debugElement.query(By.css('button')).nativeElement;
-      el.click();
-      expect(categoryServiceSpy).toHaveBeenCalledTimes(1);
-    }));
-
-
-    // it('should open sidenav', async(() => {
-
-    //   // const { component, fixture } = setup();
-
-    //   // const compiled = fixture.debugElement;
-
-    //   // expect(compiled.query(By.css('mat-drawer-opened'))).toBe(null);
-
-    //   // const openButton  = fixture.debugElement.query(By.css('mat-button-toggle')).nativeElement;
-    //   // openButton.click();
-
-    //   // expect(compiled.query(By.css('mat-drawer-opened')).nativeElement).not.toBe(null);
-    // }));
-
   });
 });

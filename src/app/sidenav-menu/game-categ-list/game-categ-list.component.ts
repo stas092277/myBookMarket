@@ -15,12 +15,12 @@ import { Categ } from 'src/app/Models/categInterface';
 })
 export class GameCategListComponent {
 
-  typesOfGoods: Categ[];
+  // typesOfGoods: Categ[];
 
-  constructor( private _gameBaseSerice: BaseService ){}
+  // constructor( private _gameBaseSerice: BaseService ){}
 
-  ngOnInit() {
-    this.typesOfGoods = this._gameBaseSerice.get();
-  }
+  // ngOnInit() {
+  //   this.typesOfGoods = this._gameBaseSerice.get();
+  // }
 
 }
