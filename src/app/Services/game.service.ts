@@ -8,7 +8,7 @@ import { BaseService } from '../Abstractions/base.service';
 
 export class GameService implements BaseService {
 
-  private gamesList: Categ[] = [
+  categoryList: Categ[] = [
     {
       name: 'Аркада',
       goods: [
@@ -92,19 +92,25 @@ export class GameService implements BaseService {
 
 
   get(): Categ[] {
-    return this.gamesList;
+    return this.categoryList;
   }
 
   update(topic: Categ)  {
-    this.gamesList.push(topic);
+    this.categoryList.forEach(
+      tmp => {
+      if (tmp.name === topic.name) {
+        tmp.goods = topic.goods;
+      }
+    }
+    );
   }
 
   delete(topic: Categ) {
-    this.gamesList = [];
+    this.categoryList.filter(tmp => tmp.name !== topic.name);
   }
 
   add(topic: Categ) {
-    this.gamesList.push(topic);
+    this.categoryList.push(topic);
   }
 
 }

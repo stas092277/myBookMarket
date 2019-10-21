@@ -7,7 +7,7 @@ import { BaseService } from '../Abstractions/base.service';
 })
 export class BookService implements BaseService  {
 
-  private booksList: Categ[] = [
+  categoryList: Categ[] = [
     {
       name: 'Классика',
       goods: [
@@ -99,18 +99,25 @@ export class BookService implements BaseService  {
     ];
 
   get(): Categ[] {
-    return this.booksList;
+    return this.categoryList;
   }
 
   update(topic: Categ)  {
-    throw new Error("Method not implemented.");
+    this.categoryList.forEach(
+      tmp => {
+      if (tmp.name === topic.name) {
+        tmp.goods = topic.goods;
+      }
+    }
+    );
   }
 
   delete(topic: Categ) {
-    throw new Error("Method not implemented.");
+    this.categoryList.filter(tmp => tmp.name !== topic.name);
   }
+
   add(topic: Categ) {
-    this.booksList.push(topic);
+    this.categoryList.push(topic);
   }
 
 }

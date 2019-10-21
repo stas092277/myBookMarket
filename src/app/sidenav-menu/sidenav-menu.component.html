@@ -18,13 +18,15 @@
   <mat-sidenav #sidenav mode="side" >
     <p>Панель управления</p>
 
-    <button (click)="openBooksCateg()"  mat-button color="warn">Книги</button>
+    <button routerLink='/books' (click)="openBooksCateg()"  mat-button color="warn">Книги</button>
 
-    <button (click)="openGamesCateg()"  mat-button color="warn">Компьютерные игры</button>
+    <button routerLink='/games' (click)="openGamesCateg()"  mat-button color="warn">Компьютерные игры</button>
   </mat-sidenav>
 
   <mat-sidenav-content autosize>
     {{sidenav.opened}}
-    <app-categores-list *ngIf="showFillerBook || showFillerGame" [typesOfGoods]=typesOfGoods></app-categores-list>
-  </mat-sidenav-content>
+
+  <router-outlet *ngIf="showFillerBook || showFillerGame"></router-outlet>
+
+</mat-sidenav-content>
 </mat-sidenav-container>

@@ -7,6 +7,8 @@ import { Categ } from '../Models/categInterface';
 
 export abstract class BaseService {
 
+  abstract categoryList: Categ[];
+
   abstract get(): Categ[];
 
   abstract delete(topic: Categ);
@@ -14,4 +16,6 @@ export abstract class BaseService {
   abstract update(topic: Categ);
 
   abstract add(topic: Categ);
+
+
 }

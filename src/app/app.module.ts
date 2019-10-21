@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavMenuComponent } from './sidenav-menu/sidenav-menu.component';
 import { CategoresListComponent } from './sidenav-menu/categores-list/categores-list.component';
 import { DialogListComponent } from './sidenav-menu/categores-list/dialog-list/dialog-list.component';
+import { BookCategListComponent } from './sidenav-menu/book-categ-list/book-categ-list.component';
+import { GameCategListComponent } from './sidenav-menu/game-categ-list/game-categ-list.component';
 
 
 
@@ -25,7 +27,9 @@ import { DialogListComponent } from './sidenav-menu/categores-list/dialog-list/d
     AppComponent,
     SidenavMenuComponent,
     CategoresListComponent,
-    DialogListComponent
+    DialogListComponent,
+    BookCategListComponent,
+    GameCategListComponent
   ],
   imports: [
     BrowserModule,

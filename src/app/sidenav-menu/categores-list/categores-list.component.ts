@@ -8,6 +8,7 @@ import { DialogListComponent } from './dialog-list/dialog-list.component';
   templateUrl: './categores-list.component.html',
   styleUrls: ['./categores-list.component.css']
 })
+
 export class CategoresListComponent{
 
   selectedTopic: Categ;
@@ -16,7 +17,7 @@ export class CategoresListComponent{
 
   constructor(
     // tslint:disable-next-line: variable-name
-    public dialog: MatDialog
+    protected dialog: MatDialog
     ) {
   }
 
