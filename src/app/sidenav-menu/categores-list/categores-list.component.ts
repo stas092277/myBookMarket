@@ -19,13 +19,13 @@ export class CategoresListComponent{
   constructor(
     // tslint:disable-next-line: variable-name
     protected dialog: MatDialog,
-    private _baseSerice: BaseService
+    private _baseService: BaseService
     ) {
   }
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
-    this.typesOfGoods = this._baseSerice.get();
+    this.typesOfGoods = this._baseService.get();
   }
 
   onSelect(topic: Categ): void {
