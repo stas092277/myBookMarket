@@ -19,7 +19,7 @@ import { CategoresListComponent } from './sidenav-menu/categores-list/categores-
 import { DialogListComponent } from './sidenav-menu/categores-list/dialog-list/dialog-list.component';
 import { BookCategListComponent } from './sidenav-menu/book-categ-list/book-categ-list.component';
 import { GameCategListComponent } from './sidenav-menu/game-categ-list/game-categ-list.component';
-import { EpmloyeesListComponent } from './epmloyees-list/epmloyees-list.component';
+import { EmployeesListComponent } from './employees-list/employees-list.component';
 
 
 
@@ -31,7 +31,7 @@ import { EpmloyeesListComponent } from './epmloyees-list/epmloyees-list.componen
     DialogListComponent,
     BookCategListComponent,
     GameCategListComponent,
-    EpmloyeesListComponent
+    EmployeesListComponent
   ],
   imports: [
     BrowserModule,

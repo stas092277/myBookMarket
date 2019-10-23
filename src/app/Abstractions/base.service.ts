@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Categ } from '../Models/categInterface';
+import { Categ, Group, Product } from '../Models/categInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -7,15 +7,19 @@ import { Categ } from '../Models/categInterface';
 
 export abstract class BaseService {
 
+  abstract groupProduct: Group;
+
   abstract categoryList: Categ[];
 
-  abstract get(): Categ[];
+  abstract get(): Group;
 
-  abstract delete(topic: Categ);
+  abstract delete(product: Product);
 
-  abstract update(topic: Categ);
+  abstract update(product: Product);
 
-  abstract add(topic: Categ);
+  abstract add(product: Product);
 
+  abstract getProductByCateg( categ: Categ): Product[];
 
+  abstract getCategs(): Categ[];
 }

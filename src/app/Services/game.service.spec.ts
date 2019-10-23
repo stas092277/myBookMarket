@@ -12,6 +12,6 @@ describe('GameService', () => {
 
   it('should return 5 types of book', () => {
     const service: GameService = TestBed.get(GameService);
-    expect(service.get().length).toBe(5);
+    expect(service.getCategs().length).toBe(5);
   });
 });

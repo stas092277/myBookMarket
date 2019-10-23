@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Categ } from 'src/app/Models/categInterface';
+import { Categ, Product } from 'src/app/Models/categInterface';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogListComponent } from './dialog-list/dialog-list.component';
 import { BaseService } from 'src/app/Abstractions/base.service';
@@ -12,7 +12,7 @@ import { BaseService } from 'src/app/Abstractions/base.service';
 
 export class CategoresListComponent{
 
-  selectedTopic: Categ;
+  selectedProducts: Product[];
 
   typesOfGoods: Categ[];
 
@@ -25,14 +25,14 @@ export class CategoresListComponent{
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
-    this.typesOfGoods = this._baseSerice.get();
+    this.typesOfGoods = this._baseSerice.getCategs();
   }
 
   onSelect(topic: Categ): void {
     const dialogRef = this.dialog.open( DialogListComponent, {
       width: '1200px',
       height: '1200px',
-      data: {books: topic.goods}
+      data: {products: this._baseSerice.getProductByCateg(topic)}
     }
     );
   }
