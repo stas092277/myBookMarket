@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Categ, Product } from 'src/app/Models/categInterface';
+import { Categ, Product, Group } from 'src/app/Models/categInterface';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogListComponent } from './dialog-list/dialog-list.component';
 import { BaseService } from 'src/app/Abstractions/base.service';
@@ -14,6 +14,8 @@ export class CategoresListComponent{
 
   selectedProducts: Product[];
 
+  group: Group;
+
   typesOfGoods: Categ[];
 
   constructor(
@@ -26,6 +28,7 @@ export class CategoresListComponent{
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
     this.typesOfGoods = this._baseSerice.getCategs();
+    this.group = this._baseSerice.get();
   }
 
   onSelect(topic: Categ): void {

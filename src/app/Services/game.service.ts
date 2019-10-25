@@ -33,7 +33,7 @@ export class GameService implements BaseService {
     ];
 
   groupProduct: Group = {
-    id: 0,
+    id: 1,
     nameGroup: 'игры',
     productList: [
     {

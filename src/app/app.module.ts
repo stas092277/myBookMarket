@@ -20,6 +20,8 @@ import { DialogListComponent } from './sidenav-menu/categores-list/dialog-list/d
 import { BookCategListComponent } from './sidenav-menu/book-categ-list/book-categ-list.component';
 import { GameCategListComponent } from './sidenav-menu/game-categ-list/game-categ-list.component';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
+import { EmployeeCardComponent } from './employees-list/employee-card/employee-card.component';
+import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
 
 
@@ -31,7 +33,9 @@ import { EmployeesListComponent } from './employees-list/employees-list.componen
     DialogListComponent,
     BookCategListComponent,
     GameCategListComponent,
-    EmployeesListComponent
+    EmployeesListComponent,
+    EmployeeCardComponent,
+    RegistrationFormComponent
   ],
   imports: [
     BrowserModule,

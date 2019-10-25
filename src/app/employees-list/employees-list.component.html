@@ -1,1 +1,8 @@
-<p>employees-list works!</p>
+<div class="container">
+  <p class="heading">Список сотрудников:</p>
+  <mat-grid-list cols="2" >
+      <mat-grid-tile *ngFor="let employeer of emlpoyeesList">
+          <app-employee-card  [employeer]= "employeer"></app-employee-card>
+      </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,23 @@
+
+<mat-card class="employee-card">
+  <mat-card-title>{{employeer.firstname}} {{employeer.lastname}}</mat-card-title>
+  <mat-card-subtitle></mat-card-subtitle>
+  <img class="employee-image" src={{employeer.pictureUrl}}>
+  <mat-card-content>
+    <h5 class="about-title separator-left">О себе: </h5>
+    <div class="edit-info" *ngIf="boolEditInfo">
+      <textarea class="post-input-form" name="text" #content placeholder="Введите информацию о сотруднике"></textarea>
+      <div class="flex-button">
+        <button mat-button (click)="boolEditInfo=false; addEmplyeeAbout(content.value, employeer)" class="add-comment-button">Обновить</button>
+      </div>
+    </div>
+    <div class="about-content" *ngIf="boolEditInfo==false" >
+      <div *ngFor="let about of employeer.about">
+        {{about}}
+      </div>
+      <p></p>
+    </div>
+    <button *ngIf="boolEditInfo==false"  mat-button (click)="boolEditInfo=!boolEditInfo" class="add-comment-button">Добавить</button>
+  </mat-card-content>
+</mat-card>
+

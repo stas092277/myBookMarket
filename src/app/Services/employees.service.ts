@@ -19,14 +19,14 @@ export class EmployeesService {
       lastname: 'Пугачева',
       about: [],
       departmentId: 1,
-      pictureUrl: 'https://randomuser.me/api/portraits/men/15.jpg',
+      pictureUrl: 'https://randomuser.me/api/portraits/women/33.jpg',
     },
     {
       firstname: 'Дмитрий' ,
       lastname: 'Дугин',
       about: [],
       departmentId: 0,
-      pictureUrl: 'https://randomuser.me/api/portraits/women/33.jpg',
+      pictureUrl: 'https://randomuser.me/api/portraits/men/15.jpg',
     },
     {
       firstname: 'Вера' ,
@@ -46,6 +46,14 @@ export class EmployeesService {
 
   getById(id: number)  {
     return this.employeesList.filter(tmp => tmp.departmentId === id);
+  }
+
+  postAddAbout(employee: Employee, info: string){
+    this.employeesList.forEach(element => {
+      if (element === employee) {
+        element.about.push(info);
+      }
+    });
   }
 
 }
