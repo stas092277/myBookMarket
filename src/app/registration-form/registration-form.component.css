@@ -1,0 +1,11 @@
+.text-center{
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+

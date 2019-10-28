@@ -9,7 +9,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +25,7 @@ import { GameCategListComponent } from './sidenav-menu/game-categ-list/game-cate
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { EmployeeCardComponent } from './employees-list/employee-card/employee-card.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -49,7 +53,12 @@ import { RegistrationFormComponent } from './registration-form/registration-form
     MatToolbarModule,
     MatButtonToggleModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    ToastrModule.forRoot(),
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
