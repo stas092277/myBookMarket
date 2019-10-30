@@ -25,7 +25,7 @@ import { GameCategListComponent } from './sidenav-menu/game-categ-list/game-cate
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { EmployeeCardComponent } from './employees-list/employee-card/employee-card.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -42,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     RegistrationFormComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -1,22 +1,22 @@
-<form class="callout text-center">
+<form [formGroup]="authForm" class="callout text-center">
   <h2>Присоединяйся!</h2>
 
   <div class="example-container">
     <mat-form-field>
-      <input matInput placeholder="Input"  type="text" id="firstName" name="firstName" placeholder="Имя" [(ngModel)]="RegUser.firstName" required>
+      <input matInput placeholder="Input"  type="text" id="firstName" name="firstName" placeholder="Имя" formControlName="firstName" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Input" type="text" id="lastName" name="lastName" placeholder="Фамилия" [(ngModel)]="RegUser.lastName" required>
+      <input matInput placeholder="Input" type="text" id="lastName" name="lastName" placeholder="Фамилия" formControlName="lastName" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Input"  type="text" id="middleName" name="middleName" placeholder="Отчество" [(ngModel)]="RegUser.middleName">
+      <input matInput placeholder="Input"  type="text" id="middleName" name="middleName" placeholder="Отчество" formControlName="middleName">
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Город</mat-label>
-      <mat-select required matNativeControl type="text" id="city" name="city" placeholder="Город" [(ngModel)]="RegUser.city">
+      <mat-select required matNativeControl type="text" id="city" name="city" placeholder="Город" formControlName="city">
         <mat-option value="Москва">Москва</mat-option>
         <mat-option value="Санкт-Петербург">Санкт-Петербург</mat-option>
         <mat-option value="Екатеринбург">Екатеринбург</mat-option>
@@ -24,25 +24,24 @@
       </mat-select>
     </mat-form-field>
 
-
-    <input type="file" (change)="onFileSelected($event)" id="imgUrl" name="imgUrl" placeholder="Фото" [(ngModel)]="RegUser.imgUrl">
+   <input type="file" (change)="onFileSelected($event)" id="imgUrl" name="imgUrl" placeholder="Фото" formControlName="imgUrl">
 
     <mat-form-field>
-      <input matInput placeholder="Input" type="email" id="email" name="email" placeholder="Email" [(ngModel)]="RegUser.email" required>
+      <input matInput placeholder="Input" type="email" id="email" name="email" placeholder="Email" formControlName="email" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Input" type="password" id="password" name="password" placeholder="Пароль" [(ngModel)]="RegUser.password" required>
+      <input matInput placeholder="Input" type="password" id="password" name="password" placeholder="Пароль" formControlName="password" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Input" type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Подтвердите пароль" [(ngModel)]="RegUser.passwordConfirm" required>
+      <input matInput placeholder="Input" type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Подтвердите пароль" formControlName="passwordConfirm" required>
     </mat-form-field>
 
 
 
     <mat-form-field>
-      <textarea matInput placeholder="Textarea" type="about" id="about" name="about" placeholder="О себе" [(ngModel)]="RegUser.about"></textarea>
+      <textarea matInput placeholder="Textarea" type="about" id="about" name="about" placeholder="О себе" formControlName="about"></textarea>
     </mat-form-field>
 
 
