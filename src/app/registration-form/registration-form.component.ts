@@ -66,14 +66,11 @@ export class RegistrationFormComponent implements OnInit {
         Validators.required,
         Validators.maxLength(15),
         Validators.minLength(7),
-<<<<<<< HEAD
         Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$'),
         CustomValidators.patternValidator(/\d/, { hasNumber: true }),
         CustomValidators.patternValidator(/[A-Z]/, { hasCapitalCase: true }),
         CustomValidators.patternValidator(/[a-z]/, { hasSmallCase: true }),
-=======
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
->>>>>>> cad92b5cc82432b121073dd1ecf70226af1a1a8f
+
       ]),
       passwordConfirm: new FormControl('', [
         Validators.required
@@ -93,22 +90,15 @@ export class RegistrationFormComponent implements OnInit {
 
   getFIOErrorMessage(control: string) {
     return this.authForm.get(control).hasError('required') ? 'Заполниет поле' :
-<<<<<<< HEAD
     this.authForm.get(control).hasError('pattern') ? 'Должно содержать только русские символы' :
-=======
-    this.authForm.get(control).hasError('pattern') ? 'Должен содержать только русские символы' :
->>>>>>> cad92b5cc82432b121073dd1ecf70226af1a1a8f
-            '';
+
   }
 
   getPassErrorMessage() {
     return this.authForm.get('password').hasError('required') ? 'Заполниет поле' :
       this.authForm.get('password').hasError('minLength') ? 'Пароль содержит меньше 7 символов' :
-<<<<<<< HEAD
         this.authForm.get('password').hasError('pattern') ? 'Содержит недопустимые символы' :
-=======
-        this.authForm.get('password').hasError('pattern') ? 'д' :
->>>>>>> cad92b5cc82432b121073dd1ecf70226af1a1a8f
+
       '';
   }
 
