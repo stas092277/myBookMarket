@@ -26,6 +26,7 @@ import { EmployeesListComponent } from './employees-list/employees-list.componen
 import { EmployeeCardComponent } from './employees-list/employee-card/employee-card.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 
 
 
@@ -61,7 +62,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [
+    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
+  ],
   bootstrap: [AppComponent],
   entryComponents: [DialogListComponent]
 })
