@@ -41,26 +41,61 @@ export class RegistrationFormComponent implements OnInit {
 
   ngOnInit() {
     this.authForm = new FormGroup({
-      firstName: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
-      middleName: new FormControl('', []),
+      firstName: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/[А-я]/)
+      ]),
+      lastName: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/[А-я]/)
+      ]),
+      middleName: new FormControl('', [
+        Validators.pattern(/[А-я]/)
+      ]),
       city: new FormControl('', []),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      about: new FormControl('', []),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.email,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ]),
+      about: new FormControl('', [ Validators.maxLength(250)]),
       imgUrl: new FormControl('', []),
-      password: new FormControl('', [Validators.required]),
-      passwordConfirm: new FormControl('', [Validators.required])
+      password: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(15),
+        Validators.minLength(7),
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ]),
+      passwordConfirm: new FormControl('', [
+        Validators.required
+      ])
     });
   }
 
   RegisterSubmit(): void{
-    this
   }
 
-  getErrorMessage() {
-    return this.authForm.hasError('required') ? 'You must enter a value' :
-        this.authForm.hasError('email') ? 'Not a valid email' :
+  getEmailErrorMessage() {
+    return this.authForm.get('email').hasError('required') ? 'Введите почту' :
+        this.authForm.get('email').hasError('email') ? 'Отсутствует домен почты' :
+          this.authForm.get('email').hasError('pattern') ? 'Содержит недопустимы символы' :
             '';
   }
 
+  getFIOErrorMessage(control: string) {
+    return this.authForm.get(control).hasError('required') ? 'Заполниет поле' :
+    this.authForm.get(control).hasError('pattern') ? 'Должен содержать только русские символы' :
+            '';
+  }
+
+  getPassErrorMessage() {
+    return this.authForm.get('password').hasError('required') ? 'Заполниет поле' :
+      this.authForm.get('password').hasError('minLength') ? 'Пароль содержит меньше 7 символов' :
+        this.authForm.get('password').hasError('pattern') ? 'д' :
+      '';
+  }
+
+
+
 }
+

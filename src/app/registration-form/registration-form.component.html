@@ -4,23 +4,27 @@
   <div class="example-container">
     <mat-form-field>
       <input matInput placeholder="Input"  type="text" id="firstName" name="firstName" placeholder="Имя" formControlName="firstName" required>
+      <mat-error *ngIf="authForm.get('firstName').invalid">{{getFIOErrorMessage('firstName')}}</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <input matInput placeholder="Input" type="text" id="lastName" name="lastName" placeholder="Фамилия" formControlName="lastName" required>
+      <mat-error *ngIf="authForm.get('lastName').invalid">{{getFIOErrorMessage('lastName')}}</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <input matInput placeholder="Input"  type="text" id="middleName" name="middleName" placeholder="Отчество" formControlName="middleName">
+      <mat-error *ngIf="authForm.get('middleName').invalid">{{getFIOErrorMessage('middleName')}}</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Город</mat-label>
-      <mat-select required matNativeControl type="text" id="city" name="city" placeholder="Город" formControlName="city">
+      <mat-select matNativeControl type="text" id="city" name="city" placeholder="Город" formControlName="city">
         <mat-option value="Москва">Москва</mat-option>
         <mat-option value="Санкт-Петербург">Санкт-Петербург</mat-option>
         <mat-option value="Екатеринбург">Екатеринбург</mat-option>
         <mat-option value="Казань">Казань</mat-option>
+        <mat-option>Нет в списке</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -28,20 +32,21 @@
 
     <mat-form-field>
       <input matInput placeholder="Input" type="email" id="email" name="email" placeholder="Email" formControlName="email" required>
+      <mat-error *ngIf="authForm.get('email').invalid">{{getEmailErrorMessage()}}</mat-error>
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Input" type="password" id="password" name="password" placeholder="Пароль" formControlName="password" required>
+    <mat-form-field hintLabel="От 7 до 15 символов">
+      <input maxlength="15" matInput placeholder="Input" type="password" id="password" name="password" placeholder="Пароль" formControlName="password" required>
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Input" type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Подтвердите пароль" formControlName="passwordConfirm" required>
+    <mat-form-field hintLabel="Повторите пароль">
+      <input maxlength="15" matInput placeholder="Input" type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Подтвердите пароль" formControlName="passwordConfirm" required>
     </mat-form-field>
 
 
-
     <mat-form-field>
-      <textarea matInput placeholder="Textarea" type="about" id="about" name="about" placeholder="О себе" formControlName="about"></textarea>
+      <textarea maxlength="250" #input matInput placeholder="Textarea" type="about" id="about" name="about" placeholder="О себе" formControlName="about"></textarea>
+      <mat-hint align="end">{{input.value?.length || 0}}/250</mat-hint>
     </mat-form-field>
 
 
