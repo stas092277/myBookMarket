@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Categ, Product, Group } from 'src/app/Models/categInterface';
+import { Categ, Product, Group } from 'src/app/shared/Models/categInterface';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogListComponent } from './dialog-list/dialog-list.component';
-import { BaseService } from 'src/app/Abstractions/base.service';
+import { BaseService } from 'src/app/shared/Abstractions/base.service';
 
 @Component({
   selector: 'app-categores-list',

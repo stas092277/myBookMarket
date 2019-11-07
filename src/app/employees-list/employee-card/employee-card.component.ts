@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Employee } from 'src/app/Models/employeesInterface';
-import { EmployeesService } from 'src/app/Services/employees.service';
+import { Employee } from 'src/app/shared/Models/employeesInterface';
+import { EmployeesService } from 'src/app/shared/Services/employees.service';
 
 @Component({
   selector: 'app-employee-card',

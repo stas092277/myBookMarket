@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoresListComponent } from '../categores-list/categores-list.component';
 import { MatDialog } from '@angular/material/dialog';
-import { BaseService } from 'src/app/Abstractions/base.service';
-import { GameService } from 'src/app/Services/game.service';
-import { Categ } from 'src/app/Models/categInterface';
+import { BaseService } from 'src/app/shared/Abstractions/base.service';
+import { GameService } from 'src/app/shared/Services/game.service';
+import { Categ } from 'src/app/shared/Models/categInterface';
 
 @Component({
   selector: 'app-game-categ-list',

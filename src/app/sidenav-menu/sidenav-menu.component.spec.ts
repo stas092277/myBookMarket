@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SidenavMenuComponent } from './sidenav-menu.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { BookService } from '../Services/book.service';
+import { BookService } from '../shared/Services/book.service';
 import { MatSidenav } from '@angular/material/sidenav';
 
 describe('SidenavMenuComponent', () => {

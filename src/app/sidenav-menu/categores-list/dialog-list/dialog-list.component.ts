@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Product } from 'src/app/Models/categInterface';
+import { Product } from 'src/app/shared/Models/categInterface';
 import { CategoresListComponent } from '../categores-list.component';
 
 @Component({

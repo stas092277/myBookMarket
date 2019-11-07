@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GameCategListComponent } from './game-categ-list.component';
-import { BaseService } from 'src/app/Abstractions/base.service';
-import { GameService } from 'src/app/Services/game.service';
+import { BaseService } from 'src/app/shared/Abstractions/base.service';
+import { GameService } from 'src/app/shared/Services/game.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('GameCategListComponent', () => {

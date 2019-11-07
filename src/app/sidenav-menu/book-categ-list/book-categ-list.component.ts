@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { BaseService } from 'src/app/Abstractions/base.service';
-import { BookService } from 'src/app/Services/book.service';
-import { Categ } from 'src/app/Models/categInterface';
+import { BaseService } from 'src/app/shared/Abstractions/base.service';
+import { BookService } from 'src/app/shared/Services/book.service';
+import { Categ } from 'src/app/shared/Models/categInterface';
 
 @Component({
   selector: 'app-book-categ-list',

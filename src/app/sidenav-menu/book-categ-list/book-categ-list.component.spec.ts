@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookCategListComponent } from './book-categ-list.component';
 import { CategoresListComponent } from '../categores-list/categores-list.component';
-import { BaseService } from 'src/app/Abstractions/base.service';
-import { BookService } from 'src/app/Services/book.service';
+import { BaseService } from 'src/app/shared/Abstractions/base.service';
+import { BookService } from 'src/app/shared/Services/book.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('BookCategListComponent', () => {

@@ -5,8 +5,8 @@ import { By } from '@angular/platform-browser';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { BaseService } from 'src/app/Abstractions/base.service';
-import { GameService } from 'src/app/Services/game.service';
+import { BaseService } from 'src/app/shared/Abstractions/base.service';
+import { GameService } from 'src/app/shared/Services/game.service';
 
 describe('CategoresListComponent', () => {
 
