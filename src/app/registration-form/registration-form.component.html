@@ -36,15 +36,13 @@
     </mat-form-field>
 
     <mat-form-field hintLabel="От 7 до 15 символов">
-      <input maxlength="15" matInput placeholder="Input" type="password" id="password" name="password" placeholder="Пароль" formControlName="password" required>
-<<<<<<< HEAD
+      <input maxlength="15" minlength="7" matInput placeholder="Input" type="password" id="password" name="password" placeholder="Пароль" formControlName="password" required>
       <mat-error *ngIf="authForm.get('password').invalid">{{getPassErrorMessage()}}</mat-error>
-=======
->>>>>>> cad92b5cc82432b121073dd1ecf70226af1a1a8f
     </mat-form-field>
 
     <mat-form-field hintLabel="Повторите пароль">
-      <input maxlength="15" matInput placeholder="Input" type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Подтвердите пароль" formControlName="passwordConfirm" required>
+      <input maxlength="15" minlength="7" matInput placeholder="Input" type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Подтвердите пароль" formControlName="passwordConfirm" required>
+      <mat-error *ngIf="authForm.get('passwordConfirm').invalid">{{getPassConfErrorMessage()}}</mat-error>
     </mat-form-field>
 
 
@@ -59,3 +57,5 @@
   </div>
 
 </form>
+
+{{data}}
