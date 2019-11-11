@@ -27,10 +27,12 @@
         <mat-option>Нет в списке</mat-option>
       </mat-select>
     </mat-form-field>
+<!--
+   <input type="file" (change)="onFileSelected($event)" id="imgUrl" name="imgUrl" placeholder="Фото" formControlName="imgUrl"> -->
 
-   <input type="file" (change)="onFileSelected($event)" id="imgUrl" name="imgUrl" placeholder="Фото" formControlName="imgUrl">
+   <input (change)="handleLogoFileInput($event.target.files)" type="file" name="update" multiple>
 
-    <mat-form-field>
+   <mat-form-field>
       <input matInput placeholder="Input" type="email" id="email" name="email" placeholder="Email" formControlName="email" required>
       <mat-error *ngIf="authForm.get('email').invalid">{{getEmailErrorMessage()}}</mat-error>
     </mat-form-field>

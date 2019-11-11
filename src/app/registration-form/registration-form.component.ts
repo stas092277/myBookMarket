@@ -13,6 +13,7 @@ export class RegistrationFormComponent implements OnInit {
 
   RegUser: RegisterModel = new RegisterModel();
   public authForm: FormGroup;
+  logo: FileList;
   data: string = null;
 
   constructor(
@@ -24,23 +25,23 @@ export class RegistrationFormComponent implements OnInit {
     this.authForm = new FormGroup({
       firstName: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^[а-яА-Я]+$/)
+        Validators.pattern(/^[а-яА-Я]+?(\s|$)/)
       ]),
       lastName: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^[а-яА-Я]+$/)
+        Validators.pattern(/^[а-яА-Я]+?(\s|$)/)
       ]),
       middleName: new FormControl('', [
-        Validators.pattern(/^[а-яА-Я]+$/)
+        Validators.pattern(/^[а-яА-Я]+?(\s|$)/)
       ]),
       city: new FormControl('', []),
       email: new FormControl('', [
         Validators.required,
         Validators.email,
-        Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+        Validators.pattern(/^\w+([\.-]?\w+)*@\w+?(\.com|\.ru)+$/)
       ]),
       about: new FormControl('', [ Validators.maxLength(250)]),
-      imgUrl: new FormControl('', []),
+      // imgUrl: new FormControl('', []),
       password: new FormControl('', [
         Validators.required,
         Validators.maxLength(15),
@@ -57,7 +58,7 @@ export class RegistrationFormComponent implements OnInit {
   getEmailErrorMessage() {
     return this.authForm.get('email').hasError('required') ? 'Введите почту' :
       // this.authForm.get('email').hasError('email') ? 'Отсутствует домен почты' :
-        this.authForm.get('email').hasError('pattern') ? 'Неверная форма почты' :
+        this.authForm.get('email').hasError('pattern') ? 'Неверная форма почты, только com или ru' :
           '';
   }
 
@@ -82,12 +83,31 @@ export class RegistrationFormComponent implements OnInit {
 
   RegisterSubmit(): void {
     if (this.authForm.valid) {
-      this.authForm.get('password').setValue(encodeURIComponent(this.authForm.get('password').value));
-      this.authForm.get('passwordConfirm').setValue(encodeURIComponent(this.authForm.get('passwordConfirm').value));
-      this.data = JSON.stringify(this.authForm.value);
+      this.authForm.get('firstName').setValue(this.authForm.get('firstName').value.replace(/\s/g, ''));
+      this.authForm.get('lastName').setValue(this.authForm.get('lastName').value.replace(/\s/g, ''));
+      this.authForm.get('middleName').setValue(this.authForm.get('middleName').value.replace(/\s/g, ''));
+      this.authForm.get('password').setValue(encodeURI(this.authForm.get('password').value));
+      this.authForm.get('passwordConfirm').setValue(encodeURI(this.authForm.get('passwordConfirm').value));
+
+      this.AppendFormData(this.authForm);
     }
   }
 
+  handleLogoFileInput(files: FileList) {
+     this.logo = files;
+  }
 
+  private AppendFormData(data: FormGroup) {
+    var formData = new FormData();
+    formData.append('username', 'Chris');
+
+    for (let i = 0; i < this.logo.length; i++) {
+      formData.append(`photo_${i + 1}`, this.logo[i], this.logo[i].name );
+    }
+
+    formData.append('data', JSON.stringify(this.authForm.value));
+
+    this.data = JSON.stringify(formData.get('data'));
+  }
 }
 
